@@ -1,0 +1,36 @@
+{
+  "name": "exam",
+  "version": "1.0.0",
+  "description": "## install",
+  "main": "index.js",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.24.2"
+  },
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "lf": "eslint src --fix",
+    "lff": "eslint public --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dovydaszemait/nodeJS-exam-DOVZEM.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dovydaszemait/nodeJS-exam-DOVZEM/issues"
+  },
+  "homepage": "https://github.com/dovydaszemait/nodeJS-exam-DOVZEM#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.3"
+  }
+}
