@@ -1,0 +1,38 @@
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "fullName": "kola", 
+    "email": "kola@gmail.com",
+    "password": "kola"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "kola@gmail.com",
+    "password": "kola"
+}
+
+###
+
+POST http://localhost:3000/addgroup 
+Content-Type: application/json
+
+{
+"name": "Bills for dinner"
+}
+
+###
+
+POST http://localhost:3000/accounts 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ3NDQ0NzYxLCJleHAiOjE2NDc0NDgzNjF9.o-tB8U-UgL-WCspjChrB5z5sLWKowNcuOchS1n_4FFI Content-Type: application/json
+
+{
+
+"group_id": 2
+}
+
+###

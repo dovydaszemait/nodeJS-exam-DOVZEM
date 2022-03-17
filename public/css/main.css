@@ -1,0 +1,42 @@
+.head {
+ display: block;
+ width: 100%;
+ text-align: center;
+ padding: 2rem 0 0 0 ;
+    
+}
+
+.logo1 {
+ display: block;
+ width: 4rem;
+height: 4rem;
+margin-left: auto;
+margin-right: auto;
+border: solid 1px black;
+padding: 5px;
+border-radius: 50px;
+}
+
+.title2 {
+   color: gray;   
+   text-align: center;
+}
+
+.reg-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+}
+
+
+#register {
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 50%;
+gap: 0,5rem;
+margin-bottom: 2rem;
+position: relative;
+}
+
