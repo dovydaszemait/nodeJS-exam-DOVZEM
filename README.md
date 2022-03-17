@@ -1,4 +1,4 @@
-NodeJS - MySQL Exam type5
+NodeJS - MySQL Exam Type5
 
 An asignment to create a system that let you join into groups and split your bills with others.
 Front-end of this project is written in JavaScript, HTML and CSS, while we use NodeJS and Express to connect to the back-end and use mySQL as the database.
