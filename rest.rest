@@ -28,7 +28,7 @@ Content-Type: application/json
 ###
 
 POST http://localhost:3000/accounts 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQ3NDQ0NzYxLCJleHAiOjE2NDc0NDgzNjF9.o-tB8U-UgL-WCspjChrB5z5sLWKowNcuOchS1n_4FFI Content-Type: application/json
+Authorization: 
 
 {
 
