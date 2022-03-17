@@ -1,12 +1,26 @@
-const formEl = document.forms.login;
-const errorsContainerEl = document.querySelector('.errors');
+const register = document.getElementById('register');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const error = document.getElementById('error');
+
+register.addEventListener('submit', (e) => {
+  e.preventDefault();
+  error.textContent = '';
+  const userObj = { email: email.value, password: password.value };
+  if (!email.value || !password.value) {
+    error.textContent = 'Some of the fields are empty!';
+    return;
+  }
+  loginUserInfo(userObj);
+});
+
 
 function handleErrors(erorrArray) {
-  errorsContainerEl.innerHTML = '';
+  error.innerHTML = '';
   console.log('erorrArray ===', erorrArray);
 
   erorrArray.forEach((err) => {
-    errorsContainerEl.innerHTML += `<p>${err}</p>`;
+    error.innerHTML += `<p>${err}</p>`;
   });
 }
 
@@ -32,11 +46,3 @@ async function loginUser(loginUserData) {
   }
 }
 
-formEl.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const loginUserData = {
-    email: formEl.elements.email.value,
-    password: formEl.elements.password.value,
-  };
-  loginUser(loginUserData);
-});
