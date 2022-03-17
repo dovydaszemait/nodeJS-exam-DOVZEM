@@ -38,7 +38,7 @@ width: 100%;
 #register {
 display: flex;
 flex-direction: column;
-width: 50%;
+width: 23rem;
 gap: 5px;
 margin-bottom: 2rem;
 position: relative;
