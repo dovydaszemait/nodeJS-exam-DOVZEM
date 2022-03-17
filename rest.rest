@@ -1,38 +1,44 @@
-POST http://localhost:3000/auth/register
+POST http://localhost:3000/auth/register 
 Content-Type: application/json
 
 {
-    "fullName": "kola", 
-    "email": "kola@gmail.com",
-    "password": "kola"
+"email": "bond@email.com", 
+"password": "verysecret123",
+"full_name": "James Bond"
 }
 
 ###
+
 POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "kola@gmail.com",
-    "password": "kola"
+"email": "bond@email.com", 
+"password": "verysecret123"
 }
 
-###
+### 
 
-POST http://localhost:3000/addgroup 
+GET http://localhost:3000/groups
+
+###
+POST http://localhost:3000/groups
 Content-Type: application/json
 
 {
-"name": "Many bills for dinner"
+"name": "Test savings"
 }
-
 ###
 
-POST http://localhost:3000/accounts 
-Authorization: 
+GET http://localhost:3000/bills/2
+###
+
+POST http://localhost:3000/bills
+Content-Type: application/json
 
 {
-
-"group_id": 4
+"group_id": 2,
+"amount": "1 Eur",
+"description": "Test Tests"
 }
-
 ###

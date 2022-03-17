@@ -1,16 +1,25 @@
-const { successResponse, failResponse } = require('../helpers/dbHelper');
-const { insertGroup } = require('../models/groupModel');
+const { getGroupsDb, insertGroupToDb } = require('../models/groupModel');
+const { failResponce, successResponce } = require('../helpers/dbHelper');
+
+async function getGroups(req, res) {
+  const foundGroups = await getGroupsDb();
+  return foundGroups === false
+    ? failResponce(res)
+    : successResponce(res, foundGroups);
+}
 
 async function createGroup(req, res) {
-  const { userId } = req;
-  const { groupName } = req.body;
-
-  const insertResult = await insertGroup(groupName, userId);
-  return insertResult === false
-    ? failResponse(res)
-    : successResponse(res, 'group created and added to user');
+  const newGroupData = req.body;
+  const { name } = newGroupData;
+  const postAddingResult = await insertGroupToDb(newGroupData);
+  if (postAddingResult === false) {
+    res.status(500);
+    return;
+  }
+  res.json(postAddingResult);
 }
 
 module.exports = {
+  getGroups,
   createGroup,
 };

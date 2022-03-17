@@ -3,7 +3,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 const authRoutes = require('./routes/authRoutes');
 const accountRoute  = require('./routes/accountRoute');
-
+const { groupRoute } = require('./routes/groupRoute');
+const { billsRoute } = require('./routes/billsRoute');
 // const groupRoute = require('./routes/groupRoute');
 // const  { groupsRoutes }  = require('./routes/groupRoute');
 
@@ -25,11 +26,11 @@ app.use(cors());
 
 
 app.use('/auth', authRoutes);
-app.use('/accounts', accountRoute);
+// app.use('/accounts', accountRoute);
 // app.use('/bills', billsRouter);
 // app.use('/auth/', authRoutes);
-// app.use('/',  groupRoute);
-// app.use('/', accountRoute);
+app.use('/', groupRoute);
+app.use('/', billsRoute);
 
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

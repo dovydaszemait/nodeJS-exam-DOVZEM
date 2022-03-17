@@ -1,32 +1,36 @@
 const mysql = require('mysql2/promise');
 const dbConfig = require('../dbConfig');
 
-const tableNameGroup = 'groups';
-const tableNameAccount = 'accounts';
-
-async function insertGroup(name, userId) {
+async function getGroupsDb() {
   try {
     const conn = await mysql.createConnection(dbConfig);
-    const sql = `
-        INSERT INTO ${tableNameGroup} (name)
-        VALUES (?)
-        `;
-    const [insertResult] = await conn.execute(sql, [name]);
-
-    const groupId = insertResult.insertId;
-    const sql2 = `
-        INSERT INTO ${tableNameAccount} (group_id, user_id)
-        VALUES (?, ?)
-        `;
-    const [insertResult2] = await conn.execute(sql2, [groupId, userId]);
+    const sql = 'SELECT * FROM groups';
+    const [rows] = await conn.execute(sql);
     await conn.close();
-    return { group: insertResult, account: insertResult2 };
+    return rows;
   } catch (error) {
+    console.log('getGroupsDb ===', error);
     return false;
+  }
+}
+async function insertGroupToDb(newGroupData) {
+  try {
+    const connection = await mysql.createConnection(dbConfig);
+    const sql = `
+    INSERT INTO groups (name) VALUES
+    (?)
+    `;
+    const { name } = newGroupData;
+    const [insertResult] = await connection.execute(sql, [name]);
+    await connection.close();
+    return insertResult;
+  } catch (error) {
+    console.log('klaida įkeliant duomenis', error);
+    res.status(500).send('klaida insertGroupToDb');
   }
 }
 
 module.exports = {
-  insertGroup,
+  getGroupsDb,
+  insertGroupToDb,
 };
-
