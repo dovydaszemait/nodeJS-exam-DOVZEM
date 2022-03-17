@@ -1,4 +1,3 @@
-const BASE_URL = 'http://localhost:3000';
 const formEl = document.forms.login;
 const errorsContainerEl = document.querySelector('.errors');
 
@@ -10,6 +9,8 @@ function handleErrors(erorrArray) {
     errorsContainerEl.innerHTML += `<p>${err}</p>`;
   });
 }
+
+const BASE_URL = 'http://localhost:3000';
 
 async function loginUser(loginUserData) {
   const resp = await fetch(`${BASE_URL}/auth/login`, {

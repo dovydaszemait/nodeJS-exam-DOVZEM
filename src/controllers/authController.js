@@ -1,5 +1,5 @@
 const { insertUser, findUserByEmail } = require('../models/authModel');
-const { successResponce, failResponce } = require('../helpers/dbHelper');
+const { successResponse, failResponse } = require('../helpers/dbHelper');
 const { hashPass, verifyHash, generateJwtToken } = require('../helpers/helper');
 
 async function register(req, res) {
@@ -9,24 +9,24 @@ async function register(req, res) {
 
   return insertResult === false
     ? failResponce(res)
-    : successResponce(res, 'user created');
+    : successResponse(res, 'user created');
 }
 async function login(req, res) {
   const { email, password } = req.body;
 
   const findResults = await findUserByEmail(email);
-  if (findResults === false) return failResponce(res);
+  if (findResults === false) return failResponse(res);
   if (!findResults.length)
-    return failResponce(res, 'email or pass not match 1');
+    return failResponse(res);
 
   const foundUserObj = findResults[0];
 
   if (!verifyHash(password, foundUserObj)) {
-    return failResponce(res, 'email or pass not match 2');
+    return failResponse(res);
   }
 
   const token = generateJwtToken(foundUserObj);
-  successResponce(res, token);
+  successResponse(res, token);
 }
 
 module.exports = {

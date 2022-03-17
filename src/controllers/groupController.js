@@ -1,11 +1,11 @@
 const { getGroupsDb, insertGroupToDb } = require('../models/groupModel');
-const { failResponce, successResponce } = require('../helpers/dbHelper');
+const { failResponse, successResponse } = require('../helpers/dbHelper');
 
 async function getGroups(req, res) {
   const foundGroups = await getGroupsDb();
   return foundGroups === false
-    ? failResponce(res)
-    : successResponce(res, foundGroups);
+    ? failResponse(res)
+    : successResponse(res, foundGroups);
 }
 
 async function createGroup(req, res) {

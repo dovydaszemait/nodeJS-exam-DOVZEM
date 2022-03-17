@@ -1,17 +1,48 @@
-const BASE_URL = 'http://localhost:3000';
-const formEl = document.forms.register;
-const errorsContainerEl = document.querySelector('.errors');
+const errorShow = document.querySelector('.errors');
+const register = document.getElementById('formReg');
+const fullName = document.getElementById('fullName');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+const error = document.getElementById('error');
+
+register.addEventListener('submit', (e) => {
+  e.preventDefault();
+  error.textContent = '';
+  const allFieldsFilledIn = checkForEmptyFields([
+    fullName.value,
+    email.value,
+    password.value,
+    password2.value,
+  ]);
+  const passwordsMatch = checkPasswordMatch(password, password2);
+  console.log(allFieldsFilledIn);
+  console.log(passwordsMatch);
+  if (!allFieldsFilledIn || !passwordsMatch) {
+    return;
+  }
+  const newUserObj = {
+    fullName: fullName.value,
+    email: email.value,
+    password: password.value,
+  };
+  registerUser(newUserObj);
+});
+
+
 
 function handleErrors(erorrArray) {
-  errorsContainerEl.innerHTML = '';
+  errorShow.innerHTML = '';
   erorrArray.forEach((err) => {
-    errorsContainerEl.innerHTML += `<p>${err}</p>`;
+    errorShow.innerHTML += `<p>${err}</p>`;
   });
 }
 
 function passwordMatch(pass, passRepeat) {
   return pass === passRepeat;
 }
+
+const BASE_URL = 'http://localhost:3000';
 
 async function registerUser(loginUserData) {
   const resp = await fetch(`${BASE_URL}/auth/register`, {
@@ -31,21 +62,3 @@ async function registerUser(loginUserData) {
     window.location.replace('login.html');
   }
 }
-formEl.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const loginUserData = {
-    fullName: formEl.elements.fullName.value,
-    email: formEl.elements.email.value,
-    password: formEl.elements.password.value,
-  };
-  if (
-    !passwordMatch(
-      formEl.elements.password.value,
-      formEl.elements.password-repeat.value,
-    )
-  ) {
-    handleErrors(['password not match']);
-    return false;
-  }
-  registerUser(loginUserData);
-});

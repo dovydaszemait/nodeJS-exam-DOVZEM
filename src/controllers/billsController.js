@@ -1,12 +1,12 @@
 const { getBillsByIdDb, insertBillsToDb } = require('../models/billsModel');
-const { failResponce, successResponce } = require('../helpers/dbHelper');
+const { failResponse, successResponse } = require('../helpers/dbHelper');
 
 async function getBillsById(req, res) {
   const group_id = req.params.id;
   const foundSingleUser = await getBillsByIdDb(group_id);
   return foundSingleUser === false
-    ? failResponce(res)
-    : successResponce(res, foundSingleUser);
+    ? failResponse(res)
+    : successResponse(res, foundSingleUser);
 }
 async function createBill(req, res) {
   const newBillData = req.body;

@@ -29,8 +29,8 @@ async function insertBillsToDb(newBillData) {
     await connection.close();
     return insertResult;
   } catch (error) {
-    console.log('klaida įkeliant duomenis', error);
-    res.status(500).send('klaida insertBillsToDb');
+    console.log(error);
+    res.status(500).send('error');
   }
 }
 module.exports = {

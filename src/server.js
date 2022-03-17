@@ -26,11 +26,12 @@ app.use(cors());
 
 
 app.use('/auth', authRoutes);
+app.use('/', billsRoute);
+
 // app.use('/accounts', accountRoute);
 // app.use('/bills', billsRouter);
 // app.use('/auth/', authRoutes);
-app.use('/', groupRoute);
-app.use('/', billsRoute);
+// app.use('/group', groupRoute);
 
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

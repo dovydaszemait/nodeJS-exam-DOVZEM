@@ -16,7 +16,7 @@ async function joinToGroup(req, res) {
   const insertResult = await insertAccount(groupId, userId);
   return insertResult === false
     ? failResponse(res)
-    : successResponse(res, 'user joined to group');
+    : successResponse(res);
 }
 
 module.exports = {
