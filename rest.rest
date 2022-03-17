@@ -22,7 +22,7 @@ POST http://localhost:3000/addgroup
 Content-Type: application/json
 
 {
-"name": "Bills for dinner"
+"name": "Many bills for dinner"
 }
 
 ###
@@ -32,7 +32,7 @@ Authorization:
 
 {
 
-"group_id": 2
+"group_id": 4
 }
 
 ###

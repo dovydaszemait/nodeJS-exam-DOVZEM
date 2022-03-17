@@ -1,6 +1,6 @@
 const Joi = require('joi');
-const { failResponse } = require('./dbHelper');
-const { verifyJwtToken } = require('./helper');
+const { failResponse } = require('./helpers/dbHelper');
+const { verifyJwtToken } = require('./helpers/helper');
 
 async function validateUser(req, res, next) {
   const schema = Joi.object({
