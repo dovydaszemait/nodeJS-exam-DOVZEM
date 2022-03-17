@@ -8,7 +8,7 @@ async function register(req, res) {
   const insertResult = await insertUser(full_name, email, hashedPassword);
 
   return insertResult === false
-    ? failResponce(res)
+    ? failResponse(res)
     : successResponse(res, 'user created');
 }
 async function login(req, res) {
