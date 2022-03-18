@@ -9,7 +9,7 @@ async function register(req, res) {
 
   return insertResult === false
     ? failResponse(res)
-    : successResponse(res, 'user created');
+    : successResponse(res, 'User has been created');
 }
 async function login(req, res) {
   const { email, password } = req.body;

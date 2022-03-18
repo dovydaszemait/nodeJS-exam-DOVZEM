@@ -3,11 +3,11 @@ const cors = require('cors');
 const morgan = require('morgan');
 const authRoutes = require('./routes/authRoutes');
 const accountRoute  = require('./routes/accountRoute');
-const { groupRoute } = require('./routes/groupRoute');
-const { billsRoute } = require('./routes/billsRoute');
+const groupRoute = require('./routes/groupRoute');
+const billsRoute  = require('./routes/billsRoute');
+
 // const groupRoute = require('./routes/groupRoute');
 // const  { groupsRoutes }  = require('./routes/groupRoute');
-
 // const mysql = require('mysql2/promise');
 // const dbConfig = require('./dbConfig');
 
@@ -24,14 +24,12 @@ app.use(cors());
 //   res.send('Hello express');
 // });
 
+//routes
 
 app.use('/auth', authRoutes);
-app.use('/', billsRoute);
-
-// app.use('/accounts', accountRoute);
-// app.use('/bills', billsRouter);
-// app.use('/auth/', authRoutes);
-// app.use('/group', groupRoute);
+app.use('/accounts/', accountRoute);
+app.use('/groups/', groupRoute);
+// app.use('/bills/', billsRoute);
 
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

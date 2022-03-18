@@ -2,9 +2,9 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-"email": "bond@email.com", 
-"password": "verysecret123",
-"full_name": "James Bond"
+"email": "dov@email.com", 
+"password": "dov",
+"full_name": "dov zem"
 }
 
 ###
@@ -13,8 +13,8 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-"email": "bond@email.com", 
-"password": "verysecret123"
+"email": "dov@gmail.com", 
+"password": "dov"
 }
 
 ### 
@@ -26,7 +26,7 @@ POST http://localhost:3000/groups
 Content-Type: application/json
 
 {
-"name": "Test savings"
+"name": "Money spenders"
 }
 ###
 

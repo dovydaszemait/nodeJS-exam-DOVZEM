@@ -16,4 +16,23 @@ async function getBills() {
     renderBills(dataInJs.data);
   }
   getBills();
+
+  async function addBill(billData) {
+    if (token === null) throw new Error('token not found');
+  
+    const resp = await fetch(`${BASE_URL}/bills`, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(billData),
+    });
+    const dataInJs = await resp.json();
+    if (dataInJs.success === true) {
+      await handleSuccess('Bill added');
+    }
+  
+    return true;
+  }
   
