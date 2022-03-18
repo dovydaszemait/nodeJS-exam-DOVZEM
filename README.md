@@ -13,6 +13,8 @@ Enjoy!✌️
 
 # How to start
 1. npm start
+2. launch MAMP/XAAMP 
+3. import attached sql DB file 'examsql.sql' 
 
 # How to use
 1. In 'public' folder you'll find all Front-end files and styles.
