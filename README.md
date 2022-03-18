@@ -15,11 +15,11 @@ Enjoy!✌️
 1. npm start
 
 ### These are the dependancies that should've been installed: 
-📍bcryptjs 
-📍cors 
-📍dotenv 
-📍express 
-📍joi 
-📍jsonwebtoken
-📍morgan 
-📍mysql2 
+📍. bcryptjs 
+📍. cors 
+📍. dotenv 
+📍. express 
+📍. joi 
+📍. jsonwebtoken
+📍. morgan 
+📍. mysql2 
