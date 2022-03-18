@@ -82,3 +82,15 @@ a {
 color: black;
 text-decoration: underline;
 }
+
+.addGroup {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.table {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
