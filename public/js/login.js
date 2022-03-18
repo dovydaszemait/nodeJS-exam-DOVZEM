@@ -17,7 +17,6 @@ register.addEventListener('submit', (e) => {
 
 function handleErrors(erorrArray) {
   error.innerHTML = '';
-  console.log('erorrArray ===', erorrArray);
 
   erorrArray.forEach((err) => {
     error.innerHTML += `<p>${err}</p>`;

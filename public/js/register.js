@@ -16,8 +16,7 @@ register.addEventListener('submit', (e) => {
     password2.value,
   ]);
   const passwordsMatch = checkPasswordMatch(password, password2);
-  console.log(allFieldsFilledIn);
-  console.log(passwordsMatch);
+  
   if (!allFieldsFilledIn || !passwordsMatch) {
     return;
   }
@@ -54,7 +53,6 @@ async function registerUser(loginUserData) {
   });
 
   const dataInJs = await resp.json();
-  console.log('dataInJs ===', dataInJs);
   if (dataInJs.success === false) {
     handleErrors(dataInJs.error);
   }

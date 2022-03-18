@@ -37,8 +37,8 @@ POST http://localhost:3000/bills
 Content-Type: application/json
 
 {
-"group_id": 2,
-"amount": "1 Eur",
-"description": "Test Tests"
+"group_id": 4,
+"amount": "1000 Eur",
+"description": "BILLS"
 }
 ###

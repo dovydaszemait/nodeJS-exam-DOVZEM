@@ -11,8 +11,13 @@ Enjoy!✌️
 2. npm i 
 3. copy .env example to .env and enter your values
 
-## How to start
+# How to start
 1. npm start
+
+# How to use
+1. In 'public' folder you'll find all Front-end files and styles.
+2. Open register.html and create your account. Log in if you've already created your account.
+3. You can create or select your group, add bills and see your all of your groups bills in one place.
 
 ### These are the dependancies that should've been installed: 
 📍 bcryptjs 
