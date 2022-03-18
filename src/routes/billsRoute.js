@@ -11,7 +11,7 @@ module.exports = {
 };
 
 
-// // GET ALL BILLS
+// GET ALL BILLS
 // router.get('/', AuthMiddleware.restricted, async (req, res) => {
 //   Bills.find()
 //     .then(bills => {
