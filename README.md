@@ -7,7 +7,7 @@ You will find an attached sql file that you need to import if you want to use da
 
 Enjoy!✌️
 # How to install
-1. git clone 
+1. git clone <repository>
 2. npm i 
 3. copy .env example to .env and enter your values
 
