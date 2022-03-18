@@ -15,6 +15,8 @@ Enjoy!✌️
 1. npm start
 2. launch MAMP/XAAMP 
 3. import attached sql DB file 'examsql.sql' 
+ ![Screenshot 2022-03-18 at 11 35 49](https://user-images.githubusercontent.com/95608460/158978217-62f83e04-db10-48ac-b9fe-5f5031b9def3.png)
+
 
 # How to use
 1. In 'public' folder you'll find all Front-end files and styles.
@@ -32,5 +34,4 @@ Enjoy!✌️
 📍 mysql2
 
 
-![Screenshot 2022-03-18 at 11 35 49](https://user-images.githubusercontent.com/95608460/158978217-62f83e04-db10-48ac-b9fe-5f5031b9def3.png)
 
